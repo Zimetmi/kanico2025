@@ -208,3 +208,63 @@ header li a:hover {
   height: auto;
   display: block;
 }
+
+.header-image img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 1em; /* Уменьшаем размер шрифта для мобильных */
+    -webkit-text-size-adjust: 100%; /* Предотвращает автоматическое увеличение текста в iOS */
+  }
+  
+  .main {
+    min-width: 100%; /* Заменяем фиксированную ширину на 100% */
+    width: 100%;
+    overflow-x: hidden; /* Скрываем горизонтальный скролл */
+  }
+  
+  .table_blur {
+    font-size: 0.9em; /* Уменьшаем размер шрифта в таблице */
+  }
+  
+  .table_blur td,
+  .table_blur th {
+    padding: 8px 10px; /* Уменьшаем отступы в ячейках */
+  }
+  
+  /* Делаем таблицу прокручиваемой по горизонтали */
+  .table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* Плавный скролл на iOS */
+    width: 100%;
+    padding-bottom: 50px; /* Уменьшаем отступ снизу */
+  }
+  
+  /* Оптимизация для очень маленьких экранов */
+  @media (max-width: 480px) {
+    .table_blur {
+      font-size: 0.8em;
+    }
+    
+    .table_blur td,
+    .table_blur th {
+      padding: 5px 8px;
+    }
+  }
+}
+
+/* Дополнительные настройки для предотвращения зумирования */
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  touch-action: manipulation; /* Оптимизация касаний */
+}
+
+body {
+  touch-action: pan-y; /* Разрешаем только вертикальный скролл */
+}
